@@ -19,6 +19,19 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Brand colors for Gás Ideal
+				azul: 'hsl(var(--azul))',
+				'azul-escuro': 'hsl(var(--azul-escuro))',
+				cian: 'hsl(var(--cian))',
+				verde: 'hsl(var(--verde))',
+				'verde-claro': 'hsl(var(--verde-claro))',
+				laranja: 'hsl(var(--laranja))',
+				cinza: 'hsl(var(--cinza))',
+				'cinza-claro': 'hsl(var(--cinza-claro))',
+				branco: 'hsl(var(--branco))',
+				preto: 'hsl(var(--preto))',
+				
+				// Semantic tokens
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -26,7 +39,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					hover: 'hsl(var(--primary-hover))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -43,6 +57,14 @@ export default {
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',

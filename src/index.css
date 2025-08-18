@@ -2,41 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Gás Ideal Design System - Professional gas delivery company */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    /* Core brand colors for gas industry */
+    --azul: 208 100% 44%;        /* Primary brand blue */
+    --azul-escuro: 208 100% 35%; /* Darker blue for depth */
+    --cian: 180 100% 45%;        /* Cyan accent */
+    --verde: 142 72% 45%;        /* Trust green */
+    --verde-claro: 142 40% 85%;  /* Light green backgrounds */
+    --laranja: 25 95% 58%;       /* Warning/accent orange */
+    --cinza: 220 9% 46%;         /* Neutral gray */
+    --cinza-claro: 220 14% 96%;  /* Light gray backgrounds */
+    --branco: 0 0% 100%;         /* Pure white */
+    --preto: 220 25% 8%;         /* Deep black for text */
+    
+    /* Semantic color system */
+    --background: var(--branco);
+    --foreground: var(--preto);
+    
+    --card: var(--branco);
+    --card-foreground: var(--preto);
+    
+    --popover: var(--branco);
+    --popover-foreground: var(--preto);
+    
+    --primary: var(--azul);
+    --primary-foreground: var(--branco);
+    --primary-hover: var(--azul-escuro);
+    
+    --secondary: var(--cinza-claro);
+    --secondary-foreground: var(--preto);
+    
+    --muted: var(--cinza-claro);
+    --muted-foreground: var(--cinza);
+    
+    --accent: var(--verde);
+    --accent-foreground: var(--branco);
+    
+    --success: var(--verde);
+    --success-foreground: var(--branco);
+    
+    --warning: var(--laranja);
+    --warning-foreground: var(--branco);
+    
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --destructive-foreground: var(--branco);
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: var(--azul);
+    
+    /* Design tokens */
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--azul)), hsl(var(--cian)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--verde)), hsl(var(--verde-claro)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--azul-escuro)), hsl(var(--azul)), hsl(var(--cian)));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px hsl(var(--azul) / 0.1);
+    --shadow-button: 0 4px 15px hsl(var(--azul) / 0.2);
+    --shadow-floating: 0 8px 30px hsl(var(--azul) / 0.15);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -94,12 +127,95 @@ All colors MUST be HSL.
   }
 }
 
+}
+
 @layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero button variant */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-accent text-white font-semibold px-8 py-4 rounded-lg;
+    @apply hover:shadow-lg transform hover:scale-105 transition-all duration-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  /* Card component styles */
+  .card-elevated {
+    @apply bg-card rounded-xl p-6 shadow-lg border border-border;
+    @apply hover:shadow-xl transition-all duration-300;
+  }
+  
+  /* Gradient backgrounds */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  /* Floating WhatsApp button */
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full;
+    @apply flex items-center justify-center text-white shadow-lg;
+    @apply hover:shadow-xl hover:scale-110 transition-all duration-300;
+    @apply z-50 animate-pulse;
+  }
+  
+  /* Section spacing */
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+  
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Smooth animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

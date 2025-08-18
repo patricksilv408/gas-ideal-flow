@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Botijão P13 Residencial",
+    "description": "Botijão de gás tradicional de 13kg, ideal para uso doméstico. Perfeito para fogões residenciais e churrasqueiras.",
+    "price": 85.00,
+    "image": "/api/placeholder/300/300",
+    "category": "residencial",
+    "weight": "13kg",
+    "features": ["Segurança garantida", "Entrega rápida", "Preço competitivo"]
+  },
+  {
+    "id": 2,
+    "name": "Botijão P45 Comercial",
+    "description": "Botijão de 45kg para estabelecimentos comerciais. Ideal para restaurantes, lanchonetes e padarias.",
+    "price": 280.00,
+    "image": "/api/placeholder/300/300",
+    "category": "comercial",
+    "weight": "45kg",
+    "features": ["Alta capacidade", "Durabilidade", "Certificação INMETRO"]
+  },
+  {
+    "id": 3,
+    "name": "Refil P13",
+    "description": "Serviço de refil para seu botijão P13. Retire o vazio e receba o cheio no mesmo local.",
+    "price": 75.00,
+    "image": "/api/placeholder/300/300",
+    "category": "refil",
+    "weight": "13kg",
+    "features": ["Economia garantida", "Sustentabilidade", "Processo rápido"]
+  },
+  {
+    "id": 4,
+    "name": "Kit Gás Completo",
+    "description": "Kit completo com botijão P13, regulador de pressão e mangueira. Tudo que você precisa para começar.",
+    "price": 120.00,
+    "image": "/api/placeholder/300/300",
+    "category": "kit",
+    "weight": "13kg",
+    "features": ["Kit completo", "Instalação inclusa", "Garantia de 1 ano"]
+  },
+  {
+    "id": 5,
+    "name": "Botijão P20 Delivery",
+    "description": "Botijão de 20kg especial para delivery e food trucks. Tamanho ideal para negócios móveis.",
+    "price": 150.00,
+    "image": "/api/placeholder/300/300",
+    "category": "delivery",
+    "weight": "20kg",
+    "features": ["Portabilidade", "Eficiência energética", "Aprovado para food trucks"]
+  },
+  {
+    "id": 6,
+    "name": "Botijão P90 Industrial",
+    "description": "Botijão industrial de 90kg para grandes estabelecimentos. Máxima capacidade e durabilidade.",
+    "price": 450.00,
+    "image": "/api/placeholder/300/300",
+    "category": "industrial",
+    "weight": "90kg",
+    "features": ["Grande capacidade", "Uso industrial", "Entrega especializada"]
+  }
+]
